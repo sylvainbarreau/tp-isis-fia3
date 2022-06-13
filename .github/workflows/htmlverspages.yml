@@ -22,13 +22,13 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - run: |
-          echo 'shell ubuntu : ls du dossier :',
+          echo 'shell ubuntu : ls du dossier :'
           ls -a
           
       - name: installation npm
         run: |
-          npm ci
-          npm run build
+          sudo apt-get update
+          sudo apt-get install -y nginx
 
       - name: CD
         uses: JamesIves/github-pages-deploy-action@v4.3.3
