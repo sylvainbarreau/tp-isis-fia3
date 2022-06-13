@@ -30,7 +30,7 @@ jobs:
       #    sudo apt-get update
       #    sudo apt-get install -y nginx
 
-      - run: '(test index.html && echo index présent) || echo index manquant'
+      - run: '(test -f index.html && echo index présent) || echo index manquant'
 
       - name: CD
         uses: JamesIves/github-pages-deploy-action@v4.3.3
