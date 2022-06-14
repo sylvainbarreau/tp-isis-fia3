@@ -25,16 +25,16 @@ jobs:
         run: echo 'workflow lancé'
        # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: integration
-      # Runs a set of commands using the runners shell
+     #- name: installation nginx
         run: |
-          echo 'shell ubuntu : ls du dossier :'
+          sudo apt-get update
+          sudo apt-get install -y nginx
+          # Runs a set of commands using the runners shell
+          #run: |
+          # echo 'shell ubuntu : ls du dossier :'
           ls -a
           
-      #- name: installation nginx
-      #  run: |
-      #    sudo apt-get update
-      #    sudo apt-get install -y nginx
-
+ 
       - run: '(test -f index.html && echo index présent) || echo index manquant'
 
       - name: CD
