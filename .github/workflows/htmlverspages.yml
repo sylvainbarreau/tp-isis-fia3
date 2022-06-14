@@ -35,7 +35,8 @@ jobs:
           ls -a
           
  
-      - run: '(test -f index.html && echo index présent) || echo index manquant'
+      - name: test
+        run: (test -f index.html && echo 'index présent') || echo 'index manquant'
 
       - name: CD
         uses: JamesIves/github-pages-deploy-action@v4.3.3
